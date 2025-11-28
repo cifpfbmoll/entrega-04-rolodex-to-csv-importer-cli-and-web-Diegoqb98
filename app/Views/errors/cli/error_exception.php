@@ -1,0 +1,2 @@
+<?= esc($title ?? 'Error') ?> 
+<?= esc($message ?? 'An error occurred') ?>

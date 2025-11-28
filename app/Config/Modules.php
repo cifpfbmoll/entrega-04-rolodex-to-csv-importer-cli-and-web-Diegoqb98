@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use CodeIgniter\Modules\Modules as BaseModules;
+
 /**
  * --------------------------------------------------------------------
  * Modules Configuration
@@ -10,51 +12,16 @@ namespace Config;
  * This file defines the namespaces and locations of the modules
  * that are used by the application.
  */
-class Modules
+class Modules extends BaseModules
 {
     /**
-     * -------------------------------------------------------------------
-     * Auto-Discover
-     * -------------------------------------------------------------------
+     * --------------------------------------------------------------------------
+     * Composer Packages locations
+     * --------------------------------------------------------------------------
      *
-     * If true, the system will automatically discover and load
-     * all modules in the specified directories.
+     * This is an array of namespace => path mappings for Composer packages
+     * that you want to be able to use PSR-4 style directory structures
      */
-    public $autoDiscover = true;
-
-    /**
-     * -------------------------------------------------------------------
-     * Auto-Discover Paths
-     * -------------------------------------------------------------------
-     *
-     * The paths to search for modules when auto-discovering.
-     */
-    public $autoDiscoverPaths = [
-        APPPATH . 'Modules',
-        ROOTPATH . 'Modules',
-    ];
-
-    /**
-     * -------------------------------------------------------------------
-     * Modules
-     * -------------------------------------------------------------------
-     *
-     * The modules that are loaded by the application.
-     * The key is the module name and the value is the path to the module.
-     */
-    public $modules = [];
-
-    /**
-     * -------------------------------------------------------------------
-     * Should Discover
-     * -------------------------------------------------------------------
-     *
-     * Returns whether the system should auto-discover modules.
-     *
-     * @return bool
-     */
-    public function shouldDiscover(): bool
-    {
-        return $this->autoDiscover;
-    }
+    public array $composerPackages = [];
 }
+

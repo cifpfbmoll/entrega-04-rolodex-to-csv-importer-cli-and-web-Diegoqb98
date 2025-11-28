@@ -18,7 +18,7 @@ class Paths
      * This variable must contain the name of your "system" directory.
      * By default the system directory is located in your project root.
      */
-    public $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
+    public string $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
 
     /**
      * ---------------------------------------------------------------
@@ -31,7 +31,7 @@ class Paths
      * For more info please see the user guide:
      * https://codeigniter.com/user_guide/general/managing_apps.html
      */
-    public $appDirectory = __DIR__ . '/../../app';
+    public string $appDirectory = __DIR__ . '/..';
 
     /**
      * ---------------------------------------------------------------
@@ -42,7 +42,7 @@ class Paths
      * By default the "writable" directory is located inside your
      * application directory.
      */
-    public $writableDirectory = __DIR__ . '/../../writable';
+    public string $writableDirectory = __DIR__ . '/../../writable';
 
     /**
      * ---------------------------------------------------------------
@@ -53,7 +53,7 @@ class Paths
      * By default the "tests" directory is located inside your
      * application directory.
      */
-    public $testsDirectory = __DIR__ . '/../../tests';
+    public string $testsDirectory = __DIR__ . '/../../tests';
 
     /**
      * ---------------------------------------------------------------
@@ -65,26 +65,5 @@ class Paths
      * this is in "app/Views". This value is used by the core View
      * class when locating view files.
      */
-    public $viewDirectory = __DIR__ . '/../../app/Views';
-
-    /**
-     * ---------------------------------------------------------------
-     * HAMMER DIRECTORY NAME
-     * ---------------------------------------------------------------
-     *
-     * This variable must contain the name of the directory that
-     * contains the "hammer" command line utility.
-     */
-    public $hammerDirectory = __DIR__ . '/../../vendor/codeigniter4/framework';
-
-    /**
-     * ---------------------------------------------------------------
-     * NAMESPACE ROOT DIRECTORY NAME
-     * ---------------------------------------------------------------
-     *
-     * This variable must contain the name of the directory that
-     * contains the "namespace root directory". By default this is
-     * the "src" directory.
-     */
-    public $namespaceRootDirectory = __DIR__ . '/../../src';
+    public string $viewDirectory = __DIR__ . '/../Views';
 }
