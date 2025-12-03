@@ -22,6 +22,14 @@ use Config\Paths;
  * so they are available in the config files that are loaded.
  */
 
+// Path to the front controller (this file's directory)
+define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
+
+// Ensure the current directory is pointing to the front controller's directory
+if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
+    chdir(FCPATH);
+}
+
 // Location of the framework bootstrap file.
 require realpath(__DIR__ . '/../app/Config/Paths.php') ?: __DIR__ . '/../app/Config/Paths.php';
 

@@ -19,8 +19,10 @@ class Autoload
      * This maps the locations of any namespaces in your application
      * to their location on the file system. These are used by the
      * Autoloader to locate classes the first time they are called.
+     *
+     * @var array<string, array<int, string>|string>
      */
-    public $psr4 = [
+    public array $psr4 = [
         APP_NAMESPACE => APPPATH,                // For custom app namespace
         'Config'      => APPPATH . 'Config',
     ];
@@ -33,8 +35,10 @@ class Autoload
      * location on the drive. Classes loaded in this manner will have
      * slightly faster load times because the class will be loaded
      * directly.
+     *
+     * @var array<string, string>
      */
-    public $classmap = [];
+    public array $classmap = [];
 
     /**
      * -------------------------------------------------------------------
@@ -43,8 +47,10 @@ class Autoload
      * The $files array holds the names of files that should be loaded
      * on every request. These files can be helpers, functions, or
      * anything else that you might want to include globally.
+     *
+     * @var list<string>
      */
-    public $files = [];
+    public array $files = [];
 
     /**
      * -------------------------------------------------------------------
@@ -54,16 +60,8 @@ class Autoload
      * These are the files that contain helper functions. Helper files
      * are not automatically loaded, but can be loaded with the
      * helper() function.
-     */
-    public $helpers = [];
-
-    /**
-     * -------------------------------------------------------------------
-     * Auto-load Helper Files
-     * -------------------------------------------------------------------
      *
-     * If you want to automatically load helper files, set this to
-     * true. The files will be loaded on every request.
+     * @var list<string>
      */
-    public $autoLoadHelpers = false;
+    public array $helpers = [];
 }
